@@ -2,7 +2,6 @@ import { client } from './services/client.js';
 
 function getUser() {
   const user = client.auth.user();
-  console.log(user);
 
   if (!user) {
     console.error('Error getting user');
@@ -55,4 +54,4 @@ export {
   signUpUser,
   signInUser,
   signOutUser
-}
+};

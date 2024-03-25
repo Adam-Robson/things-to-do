@@ -19,7 +19,6 @@
 },
 "rules": {
     "eqeqeq": ["error", "always"],
-    "no-console": "warn",
     "indent": [
         "error",
         2,
@@ -57,19 +56,19 @@
     "space-before-function-paren": [
         "error",
         {
-            "anonymous": "never",
-            "named": "never",
-            "asyncArrow": "always"
+          "anonymous": "never",
+          "named": "never",
+          "asyncArrow": "always"
         }
     ],
-    "keyword-spacing": [
-        "error",
-        {
-            "before": true,
-            "after": true
-        }
-    ],
-    "array-bracket-spacing": "error",
-    "no-unused-vars": "off"
+  "keyword-spacing": [
+  "error",
+  {
+      "before": true,
+      "after": true
+  }
+],
+  "array-bracket-spacing": "error",
+  "no-unused-vars": "off"
 }
 }

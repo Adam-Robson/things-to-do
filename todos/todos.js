@@ -1,8 +1,8 @@
 import {
-    createTodo,
-    completeTodo,
-    getAllTodos,
-    deleteAllTodos,
+  createTodo,
+  completeTodo,
+  getAllTodos,
+  deleteAllTodos,
 } from './fetch-utils.js';
 import { renderTodo } from './render-utils.js';
 import { signOutUser } from '../auth.js';
@@ -13,22 +13,22 @@ const signOutButton = document.querySelector('#sign-out-button');
 const deleteButton = document.querySelector('.delete-button');
 
 todoForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const formData = new FormData(todoForm);
-    const todo = formData.get('todo');
+  const formData = new FormData(todoForm);
+  const todo = formData.get('todo');
 
-    const res = await createTodo(todo);
+  const res = await createTodo(todo);
 
-    todoForm.reset();
+  todoForm.reset();
 
-    const error = res.error;
+  const error = res.error;
 
-    if (error) {
-        console.error('There was an error creating the todo:', error.message);
-    } else {
-        displayTodos();
-    }
+  if (error) {
+    console.error('There was an error creating the todo:', error.message);
+  } else {
+    displayTodos();
+  }
 });
 
 let todos = [];
@@ -48,7 +48,7 @@ async function handleComplete(todo) {
     todos[index] = completed;
 
     displayTodos();
-    }
+  }
 }
 
 
@@ -59,27 +59,27 @@ async function displayTodos() {
   for (let todo of todos) {
     const renderedTodo = renderTodo(todo, handleComplete);
     todosEl.append(renderedTodo);
-    }
+  }
 
 }
 
 async function loadTodos() {
-    displayTodos();
+  displayTodos();
 }
 
 loadTodos();
 
 signOutButton.addEventListener('click', () => {
-    signOutUser();
+  signOutUser();
 });
 
 
 deleteButton.addEventListener('click', async () => {
-    const message = 'Are you sure you want to delete all todos?';
-    if (!confirm(message)) return;
-    const res = await deleteAllTodos();
-    if (!res.error) {
-      todos = [];
-    }
-    displayTodos();
+  const message = 'Are you sure you want to delete all todos?';
+  if (!confirm(message)) return;
+  const res = await deleteAllTodos();
+  if (!res.error) {
+    todos = [];
+  }
+  displayTodos();
 });
