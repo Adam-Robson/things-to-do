@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>things to do</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/icon.svg" />
+
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title">things to do</h1>
+        <div class="todos-container">
+          <button id="sign-out-button">Sign Out</button>
+            <form class="todo-form">
+              <input name="todo" required />
+              <button>Add todo</button>
+            </form>
+            <button class="delete-button">Delete all todos?</button>
+            <div class="todos"></div>
+        </div>
+    </header>
+    <script src="./todos.js" type="module"></script>
+  </body>
+</html>
